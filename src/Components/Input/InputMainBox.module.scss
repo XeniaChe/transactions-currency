@@ -1,0 +1,21 @@
+.InputBox__values{
+    // background-color: green;
+
+    h2{
+        font-size: 3.5rem;
+        margin: 2rem;
+        text-transform: uppercase;
+    }
+}
+
+
+button {
+    font-size: 3rem;
+    font-family: var( --font-family_2);
+    padding: .5rem 2.5rem;
+    box-shadow: 5px 2px 5px rgba(#000000, .5);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+
