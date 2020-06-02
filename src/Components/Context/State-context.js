@@ -5,6 +5,7 @@ const authContext = React.createContext({
     transactionName: '',
     transactionValue: 0,
     transactions: [],
+    total: 0,
     deleteItem: () => {
     }
 })

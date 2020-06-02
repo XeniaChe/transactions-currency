@@ -13,12 +13,13 @@ class TransactionInput extends  Component {
         currentRate: 0,
         transactionName: '',
         transactionValue: 0,
-        transactions: []
+        transactions: [],
+        total: 0,
     }
 
     inputCurrentHandler = (e) => {
         const valueCurrent = e.target.value;
-        const valueCurFix= parseFloat(valueCurrent).toFixed(2);
+        const valueCurFix= parseFloat(parseFloat(valueCurrent).toFixed(2));
         this.setState({currentRate: valueCurFix });
     }
 
@@ -29,14 +30,24 @@ class TransactionInput extends  Component {
 
     inputValueHandler = (e) => {
         const value = e.target.value;
-        const  valueFix= parseFloat(value).toFixed(2)
+        const  valueFix= parseFloat(parseFloat(value).toFixed(2)) ;
         this.setState({transactionValue: valueFix})
     }
 
+    totalSumCalculation = (trans) => {
+        let totalSum = 0;
+        for (const key of trans ){
+                totalSum = totalSum + key.valuePln;
+            }
+        
+        this.setState({total: totalSum});
+    }
     addTransactionHandler = () => {
         
         //creat transaction object
-        const CurrencyCalc = parseFloat(this.state.currentRate * this.state.transactionValue).toFixed(2);
+        const rateFix = this.state.currentRate;
+        const valueFix = this.state.transactionValue;
+        const CurrencyCalc = rateFix *valueFix;
         const transaction = {
             id: '',
             name: this.state.transactionName,
@@ -53,15 +64,18 @@ class TransactionInput extends  Component {
 
         //clear the input
         let userInputName = document.getElementById('userInputName');
-        userInputName.value =  ' ';
+        userInputName.value =  null;
         let userInputValue = document.getElementById('userInpuValue');
-        userInputValue.value =  ' ';
+        userInputValue.value =  null;
 
+        //calculating transactions total sum
+        this.totalSumCalculation(newTransactions);
     }
 
     deleteTransactionItemHandler = () => {
 
     }
+
     render() {
         return(
             <Fragment>
@@ -85,6 +99,7 @@ class TransactionInput extends  Component {
                                             transactionName: this.state.transactionName,
                                             transactionValue: this.state.transactionValue,
                                             transactions: this.state.transactions,
+                                            total: this.state.total,
                                             deleteItem: this.deleteTransactionItemHandler,         
                                             }}>
                     <TransactionSummary />
