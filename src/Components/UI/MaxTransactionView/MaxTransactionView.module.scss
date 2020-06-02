@@ -1,0 +1,18 @@
+.MaxTransView{
+    background-color: var( --color-base-light);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var( --font-family_2);
+    border-left: var(--boredr);
+    box-shadow: 5px 20px 15px rgba(#000000, .5);
+
+    h3{
+        font-size: 3.0rem;
+        margin: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 4rem;
+    }
+}

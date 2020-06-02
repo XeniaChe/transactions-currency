@@ -8,7 +8,7 @@ const InputMainBox =(props) => {
             <h2>Add transaction</h2>
                 {props.children}
             </div>
-            <button> ADD </button>
+            <button className={classes.BtnAdd} onClick={props.addTransaction}> ADD </button>
         </Fragment>
     )
 };

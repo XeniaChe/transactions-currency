@@ -1,0 +1,42 @@
+.TransactionItem{
+    // background-color:var(--color-base);
+    display: flex;
+    align-items: center;
+    width: 90%;
+    font-size: 2.0rem;
+    margin: 2rem 0 2rem 0;
+    padding: .5rem 1rem .5rem 1rem;
+    border: var(--boredr);
+    // &>*:not(:last-child){
+    //     border-bottom: var(--boredr);
+    // }
+ 
+
+    .Title{
+        flex: 0 0 60%;
+    }
+
+    .EuroValue{
+        // flex: 1;
+        display: inline-block;
+        min-width: 8%;
+        text-align: center;
+        margin: 0 auto;
+        // margin-right:auto ;
+
+    }
+
+    .PlnValue{
+        // flex: 1;
+        display: inline-block;
+        min-width: 8%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .BtnClose{
+        align-self: center;
+        font-size: 2.5rem;
+        padding: .2rem 1.0rem .2rem 1.0rem;
+    }
+}
