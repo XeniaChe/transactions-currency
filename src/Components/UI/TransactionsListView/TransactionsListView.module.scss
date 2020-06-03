@@ -1,6 +1,8 @@
+@import '../../../sass/mixins';
+
 .List__box{
     background-color:var(--color-base-light);
-    flex: 0 0 70%;
+    flex: 0 0 65%;
     font-family: var( --font-family_2);
     box-shadow: 5px 20px 15px rgba(#000000, .5);
     display: flex;
@@ -8,12 +10,33 @@
     align-items: center;
     margin-right: 2rem;
     
+    @include respond(tabl-port-800){
+        flex: 0 0 50%;
+    }
+
+    @include respond(phone-700){
+        width: 85%;
+        flex: 1;
+        margin-right: 0rem;
+        margin-bottom: 2rem;
+    }
+
     h3{
-        font-size: 3.0rem;
+        color:var(--color-base);
+        font-size: 2.7rem;
         margin: 2rem;
         text-transform: uppercase;
         text-align: center;
         margin-top: 4rem;
+
+        @include respond(tabl-lands-1200){
+            font-size: 3.0rem;
+        }
+
+        @include respond(tabl-port-800){
+            font-size: 2.5rem;
+        }
+
     }
 
 }

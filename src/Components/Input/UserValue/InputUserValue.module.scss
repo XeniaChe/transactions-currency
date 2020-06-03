@@ -1,8 +1,14 @@
+@import '../../../sass/mixins';
+
 .single_value{
     display: flex;
     justify-content: center;
     align-items: center;
     
+    @include respond(phone-600){
+       flex-direction: column;
+    }
+
     input{
         width: 25rem;
     }

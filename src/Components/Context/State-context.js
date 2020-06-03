@@ -6,10 +6,7 @@ const authContext = React.createContext({
     transactionValue: 0,
     transactions: [],
     total: 0,
-    deleteItem: () => {
-    },
     maxTransaction: {}, 
-
 })
 
 export default authContext;

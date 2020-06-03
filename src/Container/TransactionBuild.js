@@ -79,31 +79,39 @@ class TransactionInput extends  Component {
 
     addTransactionHandler = () => {
         //creat transaction object
-        const CurrencyCalc = this.state.currentRate * this.state.transactionValue;
-        const transaction = {
-            name: this.state.transactionName,
-            valueEuro: this.state.transactionValue,
-            valuePln: CurrencyCalc, 
+        if ( this.state.currentRate && this.state.transactionValue !== 0 &&  this.state.transactionName.length > 0) {
+            const CurrencyCalc = parseFloat((this.state.currentRate * this.state.transactionValue).toFixed(2));
+            const transaction = {
+                name: this.state.transactionName,
+                valueEuro: this.state.transactionValue,
+                valuePln: CurrencyCalc, 
+            }
+    
+            //push it to the state transactions array
+            const newTransactions = [...this.state.transactions];
+            newTransactions.push(transaction);
+    
+            //update the state
+            this.setState({
+                transactions: newTransactions,
+                transactionName: '',
+                transactionValue: 0,
+                });
+    
+            //clear the input
+            let userInputName = document.getElementById('userInputName');
+            userInputName.value =  null;
+            let userInputValue = document.getElementById('userInpuValue');
+            userInputValue.value =  null;
+    
+            //calculating transactions total sum
+            this.totalSumCalculation(newTransactions);
+    
+            //calculation  of the max value
+            this.maxValueCalculation(newTransactions);
+        } else {
+            alert(`Please, input all values`)
         }
-
-        //push it to the state transactions array
-        const newTransactions = [...this.state.transactions];
-        newTransactions.push(transaction);
-
-        //update the state
-        this.setState({transactions: newTransactions});
-
-        //clear the input
-        let userInputName = document.getElementById('userInputName');
-        userInputName.value =  null;
-        let userInputValue = document.getElementById('userInpuValue');
-        userInputValue.value =  null;
-
-        //calculating transactions total sum
-        this.totalSumCalculation(newTransactions);
-
-        //calculation  of the max value
-        this.maxValueCalculation(newTransactions);
     }
 
     deleteTransactionItemHandler = (e, index) => {
@@ -126,32 +134,30 @@ class TransactionInput extends  Component {
     render() {
         return(
             <Fragment>
-                <div className={classes.InputBox}>
-                    <InputCurrent   input={this.inputCurrentHandler} 
-                                    checking={this.state.currentRate} 
-                                    ref={this.inputElRef}/>
-                    <InputMainBox addTransaction={this.addTransactionHandler}>
-                        <InputUserValue input={this.inputNameHandler}
-                                        checking={this.state.transactionName}
-                                        id='userInputName' 
-                                        label='Transaction Name:'
-                                        placeholder='title'/>
-                        <InputUserValue input={this.inputValueHandler}
-                                        checking={this.state.transactionValue}
-                                        id='userInpuValue'
-                                        placeholder='EURO' 
-                                        label='Transaction Value:'/>
-                    </InputMainBox>
-                </div>
                 <StateContext.Provider value={{
                                             currentRate: this.state.currentRate,
                                             transactionName: this.state.transactionName,
                                             transactionValue: this.state.transactionValue,
                                             transactions: this.state.transactions,
                                             total: this.state.total,
-                                            deleteItem: this.deleteTransactionItemHandler,    
                                             maxTransaction: this.state.maxTransaction     
                                             }}>
+                    <div className={classes.InputBox}>
+                        <InputCurrent   input={this.inputCurrentHandler} 
+                                        checking={this.state.currentRate}/>
+                        <InputMainBox addTransaction={this.addTransactionHandler}>
+                            <InputUserValue input={this.inputNameHandler}
+                                            checking={this.state.transactionName}
+                                            id='userInputName' 
+                                            label="Transaction's title:"
+                                            placeholder='title'/>
+                            <InputUserValue input={this.inputValueHandler}
+                                            checking={this.state.transactionValue}
+                                            id='userInpuValue'
+                                            placeholder='EURO' 
+                                            label="Transaction's value:"/>
+                        </InputMainBox>
+                    </div>
                     <TransactionSummary delete={this.deleteTransactionItemHandler} />
                 </StateContext.Provider>
             </Fragment>

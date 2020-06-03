@@ -1,3 +1,5 @@
+@import '../../../sass/mixins';
+
 .TransactionItem{
     // background-color:var(--color-base);
     display: flex;
@@ -5,7 +7,7 @@
     width: 90%;
     font-size: 2.0rem;
     margin: 2rem 0 2rem 0;
-    padding: .5rem 1rem .5rem 1rem;
+    padding: .5rem;
     border: var(--boredr);
     
     .Title{
@@ -13,26 +15,33 @@
     }
 
     .EuroValue{
-        // flex: 1;
         display: inline-block;
-        min-width: 8%;
+        min-width: 10%;
         text-align: center;
         margin: 0 auto;
-        // margin-right:auto ;
-
     }
 
     .PlnValue{
-        // flex: 1;
         display: inline-block;
-        min-width: 8%;
+        min-width: 10%;
         margin: 0 auto;
         text-align: center;
     }
 
     .BtnClose{
         align-self: center;
-        font-size: 2.5rem;
+        font-size: 2.0rem;
         padding: .2rem 1.0rem .2rem 1.0rem;
+        background-color:var(--color-base-green-light);
+        color: var(--color-base-light);
+
+        
+        @include respond(tabl-lands-1200){
+            font-size: 3.0rem;
+        }
+
+        @include respond(tabl-port-800){
+            font-size: 2.5rem;
+        }
     }
 }

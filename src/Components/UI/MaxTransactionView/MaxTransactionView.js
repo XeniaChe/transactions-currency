@@ -11,7 +11,7 @@ const MaxTransactionView = (props) => {
 
     return(
         <div className={classes.MaxTransView}>
-            <h3>Your maximum transaction</h3>
+            <h3>Your maximum transaction:</h3>
             { maxObjLengh > 0 ?  <MaxTransaction /> : null} 
         </div>
     )

@@ -6,7 +6,7 @@ import TransactionSum from './Sum/TransactionSum';
 const TransactionsListView = (props) => {
     return(
         <div className={classes.List__box}>
-            <h3>Added transactions list</h3>
+            <h3>Added transactions list:</h3>
             <TransactionsList delete={props.delete}/>
             <TransactionSum />
         </div>
