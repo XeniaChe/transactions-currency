@@ -12,13 +12,14 @@ const TransactionList = (props) => {
         list = stateContext.transactions
     };
 
-    transList = list.map( (el,index) =>{
+    transList = list.map( (el, index) =>{
         return <TransactionItem 
                     transName={el.name}
                     transEuroValue={el.valueEuro}
                     transPlnValue={el.valuePln}
-                    key={index}/>
-    })
+                    key={index}
+                    delete={(event) => props.delete(event, index)}/>
+    });
     
     return(
         <Fragment>

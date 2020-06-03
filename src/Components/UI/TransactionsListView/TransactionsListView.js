@@ -7,7 +7,7 @@ const TransactionsListView = (props) => {
     return(
         <div className={classes.List__box}>
             <h3>Added transactions list</h3>
-            <TransactionsList />
+            <TransactionsList delete={props.delete}/>
             <TransactionSum />
         </div>
     )
