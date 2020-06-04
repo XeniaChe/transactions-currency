@@ -3,11 +3,17 @@ import classes from './TransactionSum.module.scss';
 import StateContext from '../../../Context/State-context';
 
 const TransactionSum = (props) => {
-    const stateContext = useContext(StateContext)
+    const stateContext = useContext(StateContext);
+    let style = [classes.Summ];
+
+    if (!stateContext.total) {
+        style.push(classes.not_active);
+    }
+
     return(
-        <div className={classes.Summ}>
+        <div className={style.join(' ')}>
             <h3>Total:</h3>
-            <p> {stateContext.total ? `${stateContext.total} zl ` : `0.00 zl ` }</p>
+            { stateContext.total ? <p> {stateContext.total} zl </p> : null }
         </div>
     )
 };

@@ -2,10 +2,18 @@
 
 .Summ{
     align-self: flex-end;
-    margin: 1rem 6rem 1rem 3rem;
+    margin: 1rem 6rem 2rem 3rem;
     font-size: 2.5rem;
     font-family: var( --font-family_2);
-    margin-bottom: 4rem;
+    transition: all .5s;
+
+    &.not_active p{
+        opacity: 0;
+    }
+
+    @include respond(tabl-lands-1000){
+      display: flex;
+    }
 
     h3{
         font-size: 2.5rem;
@@ -14,16 +22,22 @@
         text-align: center;
 
         @include respond(tabl-lands-1200){
-            font-size: 3.0rem;
+            font-size: 2.7rem;
         }
 
         @include respond(tabl-port-800){
-            font-size: 2.5rem;
+            font-size: 2.3rem;
         }
     }
 
     p{
         border: var(--boredr-thick);
         padding: .5rem 1rem .5rem 1rem ;
+
+        @include respond(tabl-lands-1000){
+            align-self: center;
+            font-size: 2.0rem;
+        }
     }
 }
+

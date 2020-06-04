@@ -2,20 +2,29 @@
 
 .List__box{
     background-color:var(--color-base-light);
-    flex: 0 0 65%;
+    flex: 0 0 60%;
     font-family: var( --font-family_2);
     box-shadow: 5px 20px 15px rgba(#000000, .5);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 2rem;
+    margin-right: 5rem;
+    margin-bottom: 4rem;
+    transition: all .5s;
     
-    @include respond(tabl-port-800){
-        flex: 0 0 50%;
+    &.not_active{
+        box-shadow: none;
+        opacity: .5;
+        height: 12rem;
+    }
+    
+    @include respond(tabl-lands-1100){
+        width: 70%;
+        flex: 1;
     }
 
-    @include respond(phone-700){
-        width: 85%;
+    @include respond(tabl-port-900){
+        width: 90%;
         flex: 1;
         margin-right: 0rem;
         margin-bottom: 2rem;

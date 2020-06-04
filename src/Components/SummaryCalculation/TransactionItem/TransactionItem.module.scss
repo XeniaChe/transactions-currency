@@ -11,7 +11,9 @@
     border: var(--boredr);
     
     .Title{
-        flex: 0 0 60%;
+        flex: 0 0 60%;display: flex;
+        justify-content: flex-start;
+        padding-left: 3rem;
     }
 
     .EuroValue{
@@ -34,14 +36,25 @@
         padding: .2rem 1.0rem .2rem 1.0rem;
         background-color:var(--color-base-green-light);
         color: var(--color-base-light);
+        transition: all .5s;
 
-        
-        @include respond(tabl-lands-1200){
-            font-size: 3.0rem;
+        &:hover{
+            background-color: var(--color-base-green-light2);
+            // background-color:var(--color-gold);
         }
 
-        @include respond(tabl-port-800){
+        &:active, &:focus {
+            border-radius: 0;
+            border: none;
+            outline: none;
+        }
+        
+        @include respond(tabl-lands-1200){
             font-size: 2.5rem;
+        }
+        
+        @include respond(tabl-port-900){
+            font-size: 2.0rem;
         }
     }
 }

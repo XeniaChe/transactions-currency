@@ -2,14 +2,16 @@
 
 .TransactionSummary{
     background-color: var(--color-base);
+    background-color: transparent;
     width: 95vw;
     min-height: 20rem;
     display: flex;
     min-height: 20rem;
     margin-bottom: 4rem;
 
-    @include respond(phone-700){
+    @include respond(tabl-port-900){
         flex-direction: column;
         align-items: center;
     }
+
 }

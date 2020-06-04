@@ -20,10 +20,15 @@ class TransactionInput extends  Component {
 
     currentChengeRecalculation (newRate) {
         if (this.state.currentRate !== newRate && this.state.transactions.length > 0 ) {
+            let totalSum = 0;
             for (const key of this.state.transactions ) {
-                key.valuePln = newRate * key.valueEuro;
+                key.valuePln = parseFloat(( newRate * key.valueEuro).toFixed(2));
+                
+                //recalc of total sum
+                totalSum +=  key.valuePln;
             }
-        }
+            this.setState({total: totalSum});
+        };
     }
 
     inputCurrentHandler = (e) => {
@@ -79,7 +84,8 @@ class TransactionInput extends  Component {
 
     addTransactionHandler = () => {
         //creat transaction object
-        if ( this.state.currentRate && this.state.transactionValue !== 0 &&  this.state.transactionName.length > 0) {
+        if ( this.state.currentRate !== 0 && this.state.transactionValue !== 0 &&  this.state.transactionName.length>0
+            && !isNaN(this.state.currentRate ) && !isNaN(this.state.transactionValue)) {
             const CurrencyCalc = parseFloat((this.state.currentRate * this.state.transactionValue).toFixed(2));
             const transaction = {
                 name: this.state.transactionName,
@@ -109,8 +115,11 @@ class TransactionInput extends  Component {
     
             //calculation  of the max value
             this.maxValueCalculation(newTransactions);
+
+        }else if (isNaN(this.state.currentRate ) || isNaN(this.state.transactionValue)){
+            alert(`Please, enter valid values`)
         } else {
-            alert(`Please, input all values`)
+            alert(`Please, fill in all the values`)
         }
     }
 

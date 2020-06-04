@@ -9,6 +9,9 @@
     
     .Title{
         flex: 0 0 60%;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 3rem;
     }
 
     .EuroValue{

@@ -5,7 +5,7 @@ import MaxTransactionView from './MaxTransactionView/MaxTransactionView';
 
 const TransactionSummary = (props) => {
     return(
-        <div className={classes.TransactionSummary}>
+        <div className={classes.TransactionSummary} >
             <TransactionsListView delete={props.delete} />
             <MaxTransactionView />
         </div>

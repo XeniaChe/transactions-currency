@@ -9,8 +9,14 @@ const MaxTransactionView = (props) => {
     //checking if max object is not empty
     let maxObjLengh = Object.keys(stateContext.maxTransaction).length;
 
+    // active state toogle
+    let style = [classes.MaxTransView];
+    if (stateContext.transactions.length === 0) {
+        style.push(classes.not_active);
+    }
+
     return(
-        <div className={classes.MaxTransView}>
+        <div className={style.join(' ')}>
             <h3>Your maximum transaction:</h3>
             { maxObjLengh > 0 ?  <MaxTransaction /> : null} 
         </div>

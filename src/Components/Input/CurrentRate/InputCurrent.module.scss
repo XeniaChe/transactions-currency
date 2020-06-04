@@ -4,6 +4,17 @@
     }
     input{
        min-width: 10%;
-      
+       border:  2px solid transparent;
+        outline: 1px solid black;
+
+        &:hover, &:focus{
+            border: 2px solid var(--color-base-green-light2);
+            border-radius: 0px;
+            outline: none;
+        }
+
+        &::-webkit-input-placeholder{
+            padding-left: .5rem;
+        }
     }
 }
