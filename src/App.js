@@ -17,16 +17,3 @@ class App extends Component {
 
 export default App;
 
-// <AuthContext.Provider 
-// value={{
-//   authenticated: this.state.authenticated, 
-//   login:this.loginHandler}}>
-//       {this.state.cockpitVisible ? 
-//       (<CockPit stateLength={this.state.persons.length} 
-//             stateVisible={this.state.personsVisible} 
-//             butClick={this.toogleRenderHandler} 
-//             title={this.props.appTitle}
-//         />) : 
-//         null}
-// {persons}  
-// </AuthContext.Provider>
