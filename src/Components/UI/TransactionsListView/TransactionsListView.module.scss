@@ -4,30 +4,21 @@
     background-color:var(--color-base-light);
     flex: 0 0 60%;
     font-family: var( --font-family_2);
-    box-shadow: 5px 20px 15px rgba(#000000, .5);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 5rem;
-    margin-bottom: 4rem;
     transition: all .5s;
-    
-    &.not_active{
-        box-shadow: none;
-        opacity: .5;
-        height: 12rem;
-    }
-    
+        
     @include respond(tabl-lands-1100){
         width: 70%;
-        flex: 1;
     }
 
-    @include respond(tabl-port-900){
-        width: 90%;
+    @include respond(tabl-lands-1000){
+        width: 100%;
         flex: 1;
         margin-right: 0rem;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+        box-shadow: 5px 20px 15px rgba(#000000, .5);
     }
 
     h3{
@@ -39,10 +30,6 @@
         margin-top: 4rem;
 
         @include respond(tabl-lands-1200){
-            font-size: 3.0rem;
-        }
-
-        @include respond(tabl-port-800){
             font-size: 2.5rem;
         }
 

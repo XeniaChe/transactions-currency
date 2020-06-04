@@ -50,11 +50,11 @@
         }
         
         @include respond(tabl-lands-1200){
-            font-size: 2.5rem;
+            font-size: 2.0rem;
         }
         
         @include respond(tabl-port-900){
-            font-size: 2.0rem;
+            font-size: 1.8rem;
         }
     }
 

@@ -1,20 +1,16 @@
-import React, {useContext} from 'react';
+import React, {useContext, Fragment} from 'react';
 import classes from './TransactionSum.module.scss';
 import StateContext from '../../../Context/State-context';
 
 const TransactionSum = (props) => {
     const stateContext = useContext(StateContext);
-    let style = [classes.Summ];
-
-    if (!stateContext.total) {
-        style.push(classes.not_active);
-    }
-
     return(
-        <div className={style.join(' ')}>
-            <h3>Total:</h3>
-            { stateContext.total ? <p> {stateContext.total} zl </p> : null }
-        </div>
+        <Fragment>
+            { stateContext.total!==0 ? <div className={classes.Summ}>
+                <h3>Total:</h3>
+                <p> {stateContext.total} zl </p> 
+            </div> : null}
+        </Fragment>
     )
 };
 

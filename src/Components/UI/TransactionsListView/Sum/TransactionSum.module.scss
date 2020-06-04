@@ -7,9 +7,6 @@
     font-family: var( --font-family_2);
     transition: all .5s;
 
-    &.not_active p{
-        opacity: 0;
-    }
 
     @include respond(tabl-lands-1000){
       display: flex;
