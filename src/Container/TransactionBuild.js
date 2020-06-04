@@ -27,7 +27,8 @@ class TransactionInput extends  Component {
                 //recalc of total sum
                 totalSum +=  key.valuePln;
             }
-            this.setState({total: totalSum});
+            let totalSumFix = parseFloat(totalSum.toFixed(2));
+            this.setState({total: totalSumFix});
         };
     }
 
@@ -56,7 +57,8 @@ class TransactionInput extends  Component {
         for (const key of trans ){
             totalSum +=  key.valuePln;
         }
-        this.setState({total: totalSum});
+        let totalSumFix = parseFloat(totalSum.toFixed(2));
+        this.setState({total: totalSumFix});
     }
 
     //Determining transaction with max value
@@ -128,9 +130,7 @@ class TransactionInput extends  Component {
         const elIndex = index;
         const newTransactions = [ ...this.state.transactions];
         newTransactions.splice(elIndex, 1);
-        this.setState({
-            transactions: newTransactions
-        });
+        this.setState({transactions: newTransactions});
 
         //recalculation  of the total sum
         this.totalSumCalculation(newTransactions);
@@ -144,13 +144,13 @@ class TransactionInput extends  Component {
         return(
             <Fragment>
                 <StateContext.Provider value={{
-                                            currentRate: this.state.currentRate,
-                                            transactionName: this.state.transactionName,
-                                            transactionValue: this.state.transactionValue,
-                                            transactions: this.state.transactions,
-                                            total: this.state.total,
-                                            maxTransaction: this.state.maxTransaction     
-                                            }}>
+                                    currentRate: this.state.currentRate,
+                                    transactionName: this.state.transactionName,
+                                    transactionValue: this.state.transactionValue,
+                                    transactions: this.state.transactions,
+                                    total: this.state.total,
+                                    maxTransaction: this.state.maxTransaction     
+                                    }}>
                     <div className={classes.InputBox}>
                         <InputCurrent   input={this.inputCurrentHandler} 
                                         checking={this.state.currentRate}/>
