@@ -1,14 +1,14 @@
 @import '../../../sass/mixins';
 
 .TransactionItem{
-    // background-color:var(--color-base);
+    background-color:var( --color-base-light2);
     display: flex;
     align-items: center;
-    width: 90%;
+    width: 95%;
     font-size: 2.0rem;
     margin: 2rem 0 2rem 0;
     padding: .5rem;
-    border: var(--boredr);
+    margin-left: -4.5rem;
     
     .Title{
         flex: 0 0 60%;display: flex;
