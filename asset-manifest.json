@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cur-transact-calc-deployed/static/css/main.d937ae5f.chunk.css",
-    "main.js": "/cur-transact-calc-deployed/static/js/main.69e88613.chunk.js",
-    "main.js.map": "/cur-transact-calc-deployed/static/js/main.69e88613.chunk.js.map",
-    "runtime-main.js": "/cur-transact-calc-deployed/static/js/runtime-main.9681e04a.js",
-    "runtime-main.js.map": "/cur-transact-calc-deployed/static/js/runtime-main.9681e04a.js.map",
-    "static/js/2.ed4a0df3.chunk.js": "/cur-transact-calc-deployed/static/js/2.ed4a0df3.chunk.js",
-    "static/js/2.ed4a0df3.chunk.js.map": "/cur-transact-calc-deployed/static/js/2.ed4a0df3.chunk.js.map",
-    "index.html": "/cur-transact-calc-deployed/index.html",
-    "precache-manifest.bcc7a79a50fc0171b3c490f6ddd3ae96.js": "/cur-transact-calc-deployed/precache-manifest.bcc7a79a50fc0171b3c490f6ddd3ae96.js",
-    "service-worker.js": "/cur-transact-calc-deployed/service-worker.js",
-    "static/css/main.d937ae5f.chunk.css.map": "/cur-transact-calc-deployed/static/css/main.d937ae5f.chunk.css.map",
-    "static/js/2.ed4a0df3.chunk.js.LICENSE.txt": "/cur-transact-calc-deployed/static/js/2.ed4a0df3.chunk.js.LICENSE.txt",
-    "static/media/index.module.scss": "/cur-transact-calc-deployed/static/media/dmitry-demidko-z4VuRg-ZOEg-unsplash_small.b0da8bfb.jpg"
+    "main.css": "/transactions-currency/static/css/main.aeac3147.chunk.css",
+    "main.js": "/transactions-currency/static/js/main.491354cd.chunk.js",
+    "main.js.map": "/transactions-currency/static/js/main.491354cd.chunk.js.map",
+    "runtime-main.js": "/transactions-currency/static/js/runtime-main.e73c3694.js",
+    "runtime-main.js.map": "/transactions-currency/static/js/runtime-main.e73c3694.js.map",
+    "static/js/2.ed4a0df3.chunk.js": "/transactions-currency/static/js/2.ed4a0df3.chunk.js",
+    "static/js/2.ed4a0df3.chunk.js.map": "/transactions-currency/static/js/2.ed4a0df3.chunk.js.map",
+    "index.html": "/transactions-currency/index.html",
+    "precache-manifest.6d8b76145c5176f1a39d2b5556b419ce.js": "/transactions-currency/precache-manifest.6d8b76145c5176f1a39d2b5556b419ce.js",
+    "service-worker.js": "/transactions-currency/service-worker.js",
+    "static/css/main.aeac3147.chunk.css.map": "/transactions-currency/static/css/main.aeac3147.chunk.css.map",
+    "static/js/2.ed4a0df3.chunk.js.LICENSE.txt": "/transactions-currency/static/js/2.ed4a0df3.chunk.js.LICENSE.txt",
+    "static/media/index.module.scss": "/transactions-currency/static/media/dmitry-demidko-z4VuRg-ZOEg-unsplash_small.b0da8bfb.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9681e04a.js",
+    "static/js/runtime-main.e73c3694.js",
     "static/js/2.ed4a0df3.chunk.js",
-    "static/css/main.d937ae5f.chunk.css",
-    "static/js/main.69e88613.chunk.js"
+    "static/css/main.aeac3147.chunk.css",
+    "static/js/main.491354cd.chunk.js"
   ]
 }
